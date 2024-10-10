@@ -1,0 +1,57 @@
+body{
+    background-color:chocolate;
+    display: flex;
+}
+.gen1{
+  width: 70vh;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+h1{
+    color: white;
+}
+
+
+/* Contenedor principal (content1) */
+.content1 {
+  margin-top: 10px;
+  display: flex;            /* Usamos Flexbox */
+  justify-content: center;   /* Centrar horizontalmente */
+  align-items: center;       /* Centrar verticalmente */
+  width: 100%;
+}
+.content1:hover{
+  cursor: pointer;
+}
+/* Contenedor del contenido (opt1) */
+.opt1 {
+  width: 300px;              /* Ancho fijo del div */
+  background-color: white;   /* Fondo blanco */
+  border-radius: 10px;       /* Esquinas redondeadas */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+  
+  display: flex;
+  align-items: center;        /* Centrar texto y contenido interno */
+  align-content: center;
+}
+
+/* Imagen */
+.opt1 img {
+  width: 8%;              /* Ancho fijo de la imagen */
+  height: 8%;              /* Altura automática */
+  margin-left: 20px;
+}
+
+/* Botón */
+.opt1 button {
+  width: 80%;               /* Botón ocupa todo el ancho del div */
+  padding: 10px;
+  background-color: white;
+  outline: none; /* Elimina el borde que aparece al hacer clic */
+  border: none;  /* Opcional: Si también deseas eliminar el borde normal */
+  cursor: pointer;
+  border-radius: 5px;        /* Esquinas redondeadas */
+  font-size: 16px;
+}
+
