@@ -1,0 +1,33 @@
+.contenido-foot {
+    background-color: #255957;
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem;
+    width: 100vw; /* Extiende al ancho total de la pantalla */
+    position: relative; /* Ajusta el footer según el contenido */
+    bottom: 0;
+    left: 0;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.contenido-foot .logos{
+    padding: 30px;
+}
+
+.contenido-foot .logos img{
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+}
+.contenido-foot span{
+    color:#ffffff;
+}
+@media (max-width: 768px) {
+    .contenido-foot {
+      flex-direction: column;
+    }
+  }
+  

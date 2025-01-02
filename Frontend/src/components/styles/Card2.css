@@ -1,0 +1,113 @@
+/*Preparación*/
+.item{
+    display: flex;
+    justify-content: center;
+}
+.producto{
+    background-color: #255957;
+    width: 280px;
+    height: 350px;
+    place-items:center;
+    border-radius: 15px;
+    align-items: center;
+
+}
+.producto .contenido{
+    width: 100%;
+    height: 70%;
+    background-color: #A98743;
+    border-radius: 15px; 
+    align-content: center;
+}
+.producto .contenido .imagen{
+    place-items:center;
+}
+.producto .contenido .imagen img{
+    border-radius: 10px;
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    margin: 10px;
+    box-shadow: -4px 0 15px rgba(0, 0, 0, 0.3); /* Sombra sutil para separar el menú */
+}
+.producto .contenido .info {
+    display: none;
+    width: 100%;
+    height: 70%;
+}
+.producto:hover{
+    
+    .contenido .info{
+        display: block;
+        background-color: rgba(0, 0, 0, 0.5); /* Fondo negro semi-transparente */
+        position:absolute;
+        align-content: center;
+        border-radius: 15px;
+    }
+    .contenido .info button{
+        background-color: #F7C548;
+    }
+    .contenido .info p{
+        color: #F7C548;
+        font-size: 1em;
+        font-weight: 500;
+    }
+}
+
+.producto .titulos span{
+    color: white;
+    display:block;
+}
+.producto .titulos .nombre{
+    color: white;
+    font-size: 2em;
+    font-weight: 800;
+    padding: 5px;
+}
+.producto .titulos .level{
+    color: white;
+    font-size: 1em;
+    font-weight: 400;
+}
+@media (max-width: 768px) {
+    .contenido-foot {
+      flex-direction: column;
+    }
+  }/*
+.producto{
+    cursor: pointer;
+    place-items:center;
+    background-color: beige;
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px  beige;
+    color: black;
+}
+.producto .contenido{
+    display: flex;
+}
+.producto .contenido{
+    height: auto;
+    width: auto;
+    margin: 10px;
+}
+.producto .contenido .imagen img{
+    border-radius: 10px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 4px solid black;
+    margin: 10px;
+}
+.producto .contenido .datos {
+    width: 100%;
+    margin: 10px;
+}
+.producto .contenido .datos ul{
+    text-align: start;
+}
+*/
+
+.producto:hover{
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Sombra al pasar el mouse */
+    transform: translateY(-5px); /* Desplazar hacia arriba */
+}

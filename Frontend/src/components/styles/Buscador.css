@@ -1,0 +1,37 @@
+.busqueda{
+    display: inline-flex;
+    justify-content: center; /* Centra el contenido verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
+    width: 80vw;
+}
+
+.busqueda input{
+  width: 40vw;
+  border-radius: 8px;
+  border: none;
+  padding: 0.8em 1em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #f9f9f9;
+  margin-right: 10px;
+}
+
+
+
+.busqueda .boton button{
+    text-align: center;
+  align-content: center;
+  
+  background-color: #F7C548;
+}
+.busqueda .boton button:hover{
+  filter: brightness(0.9); /* Aplica un oscurecimiento del 10% */
+
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+

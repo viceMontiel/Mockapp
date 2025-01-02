@@ -1,0 +1,151 @@
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #A98743;
+    padding: 10px;
+    box-sizing: border-box; /* Para asegurar que el padding no afecte el tamaño total */
+    position: fixed; /* Fija la barra en la parte superior si es necesario */
+    top: 0; /* Asegúrate de que esté en la parte superior */
+    left: 0; /* Comienza desde el borde izquierdo */
+    z-index: 100; /* Asegura que la NavBar esté por encima de otros elementos */
+    height: 70px;
+  }
+  p{
+    font-size: 2rem;
+    color: white;
+  }
+  
+  .navbar-links {
+    margin-right: 20px;
+    list-style: none;
+    display: flex;
+    gap: 25px;
+  }
+  
+  .navbar-links li {
+    margin: 0;
+  }
+  
+  .navbar-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+  }
+  
+  .navbar-links a:hover {
+    color: chocolate
+  }
+  * Estilos de la lista de navegación para pantallas grandes */
+  .navbar-links {
+    display: flex;
+    gap: 1.5em;
+  }
+  
+  .navbar-links li {
+    list-style: none;
+  }
+  .navbar-links li {
+    list-style: none;
+  }
+  
+  .navbar-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+  }
+  
+  /* Estilos de la hamburguesa */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  .hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: #EEEBD3;
+    margin: 4px 0;
+  }
+ 
+  
+/* Estilos para pantallas pequeñas (móvil) */
+@media (max-width: 767px) {
+  
+  /* Estilo del contenedor del menú */
+  .navbar-links {
+    margin-right: 0;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: auto;
+    width: auto;
+    background-color: #A98743; /* Fondo semi-transparente */
+    box-shadow: -4px 0 15px rgba(0, 0, 0, 0.3); /* Sombra sutil para separar el menú */
+    flex-direction: column;
+    text-align: left;
+    justify-content: center;
+    right: -100%;
+    transition: transform 0.4s ease;
+    gap: 0px;
+
+  }
+
+  /* Mostrar el menú al activar la clase .open */
+  .navbar-links.open {
+    padding-left: 0;
+    right: 0;
+    top: 50px;
+  }
+
+  /* Botón de cierre estilo 'X' */
+  .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.5em;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  .close-btn:hover {
+    color: white; /* Cambia de color al pasar el cursor */
+  }
+  li{
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+    width: 100%
+  }
+  li:hover {
+    background-color: #A98743;
+  }
+  /* Icono de hamburguesa */
+  .hamburger {
+    display: flex;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Estilos para los enlaces */
+  .navbar-links li {
+    list-style: none;
+  }
+
+  .navbar-links a {
+    color: white;
+    font-size: 1.2em;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .navbar-links a:hover {
+    color: #f5a623; /* Color de resaltado */
+  }
+}

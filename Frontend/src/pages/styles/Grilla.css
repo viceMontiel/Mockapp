@@ -1,0 +1,54 @@
+.content-preparaciones{
+  width: 80vw;
+  place-content: center;
+  align-items: center;
+}
+.content-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1fr);
+    gap: 20px;
+    place-content: center;
+    align-items: center;
+}
+@media (max-width: 768px) {
+  .content-grid{
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1fr);
+  }
+}
+
+.sort-options {
+    display: flex;
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    border-radius: 10px; /* Esquinas redondeadas */
+    padding: 10px 20px; /* Relleno interno */
+    margin: 20px;
+  }
+  
+  .sort-options label {
+    color: #ffffff; /* Color del texto */
+    margin-right: 10px; /* Espacio entre la etiqueta y el select */
+  }
+  
+  .sort-options select {
+    padding: 10px; /* Relleno interno del select */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Esquinas redondeadas */
+    background-color: #A98743; /* Fondo oscuro */
+    color: #ffffff; /* Color del texto */
+    font-size: 0.8em; /* Tamaño de fuente */
+    transition: background-color 0.3s ease; /* Transición suave */
+  }
+  
+  .sort-options select:hover {
+    background-color:#F7C548; /* Fondo más claro al pasar el mouse */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+  }
+  
+  .sort-options select:focus {
+    outline: none; /* Elimina el borde de enfoque */
+    box-shadow: 0 0 5px rgba(100, 108, 255, 0.5); /* Sombra de enfoque */
+  }
+  

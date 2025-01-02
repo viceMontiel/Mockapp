@@ -55,6 +55,12 @@ function Register() {
       case "auth/invalid-credential":
         setError("Correo o contraseña inválida. Intentalo de nuevo");
         break;
+      case "auth/email-already-in-use":
+        setError("El correo ya está asociado a una cuenta. Prueba iniciando sesión");
+        break;
+      case "auth/weak-password":
+        setError("Contraseña inválida. Debe tener al menos 6 caracteres.")
+        break;
       default:
         setError("Ocurrió un error inesperado. Inténtalo de nuevo.");
     }
@@ -62,36 +68,42 @@ function Register() {
 
 
   return (
-    <div className="gen1">
-      <h1>Registrarse</h1>
-      <div className='error' style={{ display: error ? "block" : "none" }}> 
-          {error && <p>{error}</p>} {/* Mostrar error personalizado */}
+    <div>
+      <div>
+        <h1>Registrarse</h1>
+        <div className='registrarse'>
+          <div className='error' style={{ display: error ? "block" : "none" }}> 
+            {error && <p>{error}</p>} {/* Mostrar error personalizado */}
+          </div>
+          <form onSubmit={handleSubmit} className='sesionForm'>
+            <input
+              type="email"
+              placeholder="Correo electrónico"
+              value={user.email}
+              onChange={(e) => setUser({ ...user, email: e.target.value })}
+              required
+            />
+            <input
+              type="password"
+              placeholder="Contraseña"
+              value={user.password}
+              onChange={(e) => setUser({ ...user, password: e.target.value })}
+              required
+            />
+            <input
+              type="password"
+              placeholder="Confirma tu contraseña"
+              value={user.confirmPassword}
+              onChange={(e) => setUser({ ...user, confirmPassword: e.target.value })}
+              required
+            />
+            <button type="submit">Registrarse</button>
+            <p className='registro' onClick={handleLogin}>¿Ya tienes cuenta? <span>Inicia sesión aquí</span></p>
+          </form>
+        </div>
       </div>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          placeholder="Correo electrónico"
-          value={user.email}
-          onChange={(e) => setUser({ ...user, email: e.target.value })}
-          required
-        />
-        <input
-          type="password"
-          placeholder="Contraseña"
-          value={user.password}
-          onChange={(e) => setUser({ ...user, password: e.target.value })}
-          required
-        />
-        <input
-          type="password"
-          placeholder="Confirma tu contraseña"
-          value={user.confirmPassword}
-          onChange={(e) => setUser({ ...user, confirmPassword: e.target.value })}
-          required
-        />
-        <button type="submit">Registrarse</button>
-        <p className='registro' onClick={handleLogin}>¿Ya tienes cuenta? Inicia sesión aquí</p>
-      </form>
+      
+      
       
     </div>
   );

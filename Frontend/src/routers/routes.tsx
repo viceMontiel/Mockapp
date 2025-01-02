@@ -1,9 +1,13 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { ReactNode } from 'react';
 import Home from '../pages/Home';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
 import { useAuth } from '../context/AuthContext';
+import Preparaciones from '../pages/Preparaciones';
+import DetallePreparacion from '../pages/DetallePreparacion';
+import ScrollToTop from './scrollTop';
+import CrearResena from '../pages/CrearResena';
 
 interface AuthContextProviderProps {
     children: ReactNode;
@@ -21,17 +25,33 @@ function MyRoutes() {
     };
 
     return (
-        <BrowserRouter>
+        <Router>
+            <ScrollToTop/>
             <Routes>
                 <Route path='/' element={
                     <RequireAuth>
                         <Home />
                     </RequireAuth>
                 } />
+                <Route path='/crear-resena' element={
+                    <RequireAuth>
+                        <CrearResena />
+                    </RequireAuth>
+                } />
+                <Route path='/preparaciones' element={
+                    <RequireAuth>
+                        <Preparaciones />
+                    </RequireAuth>
+                } />
+                <Route path='/preparaciones/:title' element={
+                    <RequireAuth>
+                        <DetallePreparacion />
+                    </RequireAuth>
+                } />
                 <Route path='/login' element={<Login />} />
                 <Route path='/register' element={<Register />} />
             </Routes>
-        </BrowserRouter>
+        </Router>
     );
 }
 

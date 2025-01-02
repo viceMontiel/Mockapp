@@ -64,49 +64,55 @@ function Login() {
         setError("Demasiados intentos fallidos. Intenta más tarde.");
         break;
       case "auth/invalid-credential":
-        setError("Correo o contraseña inválida. Intentalo de nuevo");
+        setError("Correo o contraseña inválida. Inténtalo de nuevo");
         break;
-      default:
-        setError("Ocurrió un error inesperado. Inténtalo de nuevo.");
     }
   };
 
   return (
-    <div className="gen1">
-      <h1>Iniciar Sesión</h1>
-      <div className='error' style={{ display: error ? "block" : "none" }}> 
-          {error && <p>{error}</p>} {/* Mostrar error personalizado */}
-      </div>
-      
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          name="email"
-          placeholder="alguien@example.com"
-          value={user.email}
-          onChange={handleChange} // Controlar el input del email
-          required
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Contraseña"
-          value={user.password}
-          onChange={handleChange} // Controlar el input de la contraseña
-          required
-        />
-        <button type="submit">Iniciar Sesión</button>
-        <p className='registro' onClick={handleRegister}>¿No tienes una cuenta? Regístrate aquí</p>
-      </form>
-      <div className='content1' onClick={handleGoogle}>
-        <div className='opt1'>
-          <img src={google}/> 
+    <div>
+      <div>
+        <h1>Iniciar Sesión</h1>
+        <div className='inicioSesion'>
+          <div className='error' style={{ display: error ? "block" : "none" }}> 
+              {error && <p>{error}</p>} {/* Mostrar error personalizado */}
+          </div>
+          <form onSubmit={handleSubmit} className='sesionForm'>
           
-          <button>
-            Iniciar con Google
-          </button>
+            <input
+              type="email"
+              name="email"
+              placeholder="alguien@example.com"
+              value={user.email}
+              onChange={handleChange} // Controlar el input del email
+              required
+            />
+            <input
+              type="password"
+              name="password"
+              placeholder="Contraseña"
+              value={user.password}
+              onChange={handleChange} // Controlar el input de la contraseña
+              required
+            />
+            <button type="submit">Iniciar Sesión</button>
+            <p className='registro' onClick={handleRegister}>¿No tienes una cuenta? <span>Regístrate aquí</span></p>
+          </form>
+          <div className='googleOption' onClick={handleGoogle}>
+            <img src={google}/>
+            
+            <button>
+              Iniciar con Google
+            </button>
+          </div>
+        
         </div>
       </div>
+
+     
+      
+      
+      
       
       
     </div>
